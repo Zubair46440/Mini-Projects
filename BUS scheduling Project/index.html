@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Bus Scheduling</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="image/logo.png" alt="">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-toggle="toggleContent0"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="#scheduling" data-toggle="toggleContent1"><i
+                            class="fa-solid fa-location-crosshairs"></i>Bus Tracking System</a></li>
+                <li><a href="#route-management" data-toggle="toggleContent2"><i class="fa-solid fa-route"></i>Bus Route
+                        management</a></li>
+                <li><a href="#book-ticket" data-toggle="toggleContent3"><i class="fa-solid fa-ticket"></i>Book
+                        Ticket</a></li>
+                <li><a href="#report" data-toggle="toggleContent4"><i class="fa-solid fa-comment-dots"></i>Report</a>
+                </li>
+                <li><a href="#setting" data-toggle="toggleContent5"><i class="fa-solid fa-gear"></i>Setting</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="#login" class="btn login">Login</a>
+                <a href="#signup" class="btn signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Herosection  -->
+    <div id="toggleContent0" class="toggle-content">
+        <section class="bg-image" id="home">
+            <section class="hero">
+                <h1>Welcome to the Automated Bus Scheduling and Route Management System for Delhi</h1>
+                <p>Experience the most efficient and reliable public transport system in Delhi!</p>
+            </section>
+            <section class="mobile_img">
+                <div class="mini_img">
+                    <img src="image/phone_side_image_1.png">
+                </div>
+                <div class="mini_img">
+                    <img src="image/phone_side_image_2.png">
+                </div>
+                <div class="mini_img">
+                    <img src="image/phone_side_image_3.png">
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <!-- Content Sections (to be toggled) -->
+    <!-- Bus Tracking System -->
+    <div id="toggleContent1" class="toggle-content">
+        <section class="bus-tracking" id="scheduling">
+            <h2>Bus Tracking System</h2>
+            <div class="bustrack">
+                <div class="tracking" id="busIdInput">
+                    <label for="Bus-ID">Bus ID:</label>
+                    <input type="text" class="input" id="busIdInput" placeholder="Enter Bus ID">
+                    <br>
+                    <button onclick="trackBus()">Track Bus</button>
+                </div>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448196.52633258584!2d76.76357436215976!3d28.643684626335453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1725007681712!5m2!1sen!2sin"
+                        width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Bus Route -->
+    <div id="toggleContent2" class="toggle-content">
+        <section class="bus-routes" id="route-management">
+            <h2>Bus Routes in Delhi</h2>
+            <div class="route-container">
+                <div class="sidebar">
+                    <div class="route-management">
+                        <div class="route-point">
+                            <div class="route-point-info">
+                                <span class="route-point-icon start">●</span>
+                                <span class="route-point-name">Starting Point :</span>
+                                <input type="text" id="starting-point" class="input" placeholder="Mansa Devi Complex" />
+                            </div>
+                        </div>
+                        <div class="route-point">
+                            <div class="route-point-info">
+                                <span class="route-point-icon end">●</span>
+                                <span class="route-point-name">Ending Point :</span>
+                                <input type="text" id="ending-point" class="input" placeholder="Raffels Hospital" />
+                            </div>
+                        </div>
+                        <div class=".submit-btn">
+                            <button class=".submit-btn" onclick="searchRoute()">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div class="route-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448196.52633258584!2d76.76357436215976!3d28.643684626335453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1725089072186!5m2!1sen!2sin"
+                            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Book Ticket -->
+    <div id="toggleContent3" class="toggle-content">
+        <div class="container" id="book-ticket">
+            <h2>Book or Cancel Ticket</h2>
+            <form id="ticketForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="Your Name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Your Email" placeholder="Enter your email" required>
+
+                <label for="route">Route Number:</label>
+                <input type="text" id="route" name="Your Route" placeholder="Enter route number" required>
+
+                <label for="seats">Number of Seats:</label>
+                <input type="number" id="seats" name="Your Seats" min="1" placeholder="Enter number of seats" required>
+
+                <label for="busNumber">Bus Number:</label>
+                <input type="number" id="busNumber" placeholder=" Enter Bus Number" required>
+
+                <div class="button-group">
+                    <button type="submit">Book Ticket</button>
+                    <button type="button" onclick="cancelTicket()">Cancel Ticket</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Report section  -->
+    <div id="toggleContent4" class="toggle-content">
+        <section class="report-section" id="report">
+            <h2>Submit Your Report</h2>
+            <form class="report-form" id="reportForm">
+                <label for="issueType">Complaint Type:</label>
+                <select id="issueType" name="issueType" required>
+                    <option value="">Select Type</option>
+                    <option value="Bus Delay">Bus Delay</option>
+                    <option value="Driver Misbehavior">Driver Misbehavior</option>
+                    <option value="Bus Damage">Bus Damage</option>
+                    <option value="Item Missing">Item Missing</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="passenger_name">Passenger Name:</label>
+                <input type="text" id="passenger_name" name="passenger_name" placeholder="Enter your name" required>
+
+                <label for="route_no">Route Number:</label>
+                <input type="text" id="route_no" name="route_no" placeholder="Enter route number" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="description">Description/Feedback:</label>
+                <input type="text" id="description" name="feedback" placeholder="Type here" required
+                    style="height: 100px;">
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+    </div>
+    <!-- Setting -->
+    <div id="toggleContent5" class="toggle-content">
+        <section class="set-container">
+            <h1>Setting</h1>
+            <div class="options">
+                <div class="opt-btn" id="userSettingsBtn"><i class="fa-solid fa-circle-user"></i>User Detail's</div>
+                <div class="opt-btn" id="walletBtn"><i class="fa-solid fa-wallet"></i>Wallet</div>
+                <div class="opt-btn" id="rewardsBtn"><i class="fa-solid fa-gift"></i>Rewards</div>
+                <div class="opt-btn" id="referEarnBtn"><i class="fa-solid fa-sack-dollar"></i>Refer & Earn</div>
+                <div class="opt-btn" id="offersbtn"><i class="fa-solid fa-percent"></i>Offer's</div>
+            </div>
+            <div class="option">
+                <div class="opt-btn"><i class="fa-solid fa-users"></i>Switch Account</div>
+                <div class="opt-btn"><i class="fa-solid fa-right-from-bracket"></i>Log-out</div>
+            </div>
+            <div id="content" class="content">
+                <!-- Dynaic content write hear -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@bustracker.com</p>
+                <p>Phone: +1-234-567-890</p>
+                <p>Address: 1234 Bus Lane, City, Country</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-section">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#scheduling">Bus Tracking System</a></li>
+                    <li><a href="#route-management"> Bus Route management</a></li>
+                    <li><a href="#book-ticket">Book Ticket</a></li>
+                    <li><a href="#report">Report</a></li>
+                    <li><a herf="#manager-vier">Manager View</i></a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bus Tracker. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

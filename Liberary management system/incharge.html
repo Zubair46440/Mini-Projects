@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>📚 Library Management</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html">Book</a>
+      <a href="incharge.html">Issue/Collect</a>
+
+    </nav>
+
+    <div class="search-auth">
+      <button class="btn"><a href="signin.html">Sign In</a></button>
+      <button class="btn btn-outline"><a href="signup.html">Sign Up</a></button>
+    </div>
+  </header>
+
+
+  <section id="library-incharge" class="section">
+    <h2>Library Incharge</h2>
+
+    <div id="incharge-form" class="incharge-forms">
+      <div>
+        <h3>Issue Book</h3>
+        <form id="issue-form" class="forms">
+          <input type="text" id="issue-user" placeholder="User ID" required>
+          <input type="text" id="issue-book" placeholder="Book ID" required>
+          <input type="date" id="issue-date" required>
+          <button type="submit">Issue Book</button>
+        </form>
+      </div>
+
+      <div>
+        <h3>Collect Book</h3>
+        <form id="return-form" class="forms">
+          <input type="text" id="return-user" placeholder="User ID" required>
+          <input type="text" id="return-book" placeholder="Book ID" required>
+          <input type="date" id="return-date" required>
+          <button type="submit">Collect Book</button>
+        </form>
+      </div>
+    </div>
+
+    <div>
+      <h3>Issued Records</h3>
+      <ul id="record-list"></ul>
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
+  <script>
+    // Load records from localStorage
+    let records = JSON.parse(localStorage.getItem('libraryRecords')) || [];
+
+    function updateRecordList() {
+      recordList.innerHTML = '';
+      records.forEach((record, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${record.bookId} | ${record.userId} | ${record.action} on ${record.date}`;
+        recordList.appendChild(li);
+      });
+      localStorage.setItem('libraryRecords', JSON.stringify(records));
+    }
+
+    issueForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const userId = document.getElementById('issue-user').value;
+      const bookId = document.getElementById('issue-book').value;
+      const date = document.getElementById('issue-date').value;
+
+      records.push({ userId, bookId, action: 'Issued', date });
+      updateRecordList();
+      issueForm.reset();
+    });
+
+    returnForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const userId = document.getElementById('return-user').value;
+      const bookId = document.getElementById('return-book').value;
+      const date = document.getElementById('return-date').value;
+
+      records.push({ userId, bookId, action: 'Returned', date });
+      updateRecordList();
+      returnForm.reset();
+    });
+
+    // Initialize on load
+    updateRecordList();
+
+  </script>
+
+
+</body>
+
+</html>

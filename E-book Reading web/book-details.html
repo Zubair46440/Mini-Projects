@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Book Details</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px; 
+    }
+
+    h1{
+      text-align: center;
+    }
+
+    .book-info img {
+      width: 250px;
+    }
+
+    .book-info h2,
+    .book-info p{
+      font-size: 20px;
+    }
+
+    .book-info {
+      margin: auto;
+      width: 80vw;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .book-info button {
+      width:150px;
+      padding: 12px;
+      background-color: #ff2222;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Book Details</h1>
+  <div class="book-info">
+    <img id="book-img" src="" alt="Book Cover">
+    <div >
+      <h2 id="book-title"></h2>
+      <p><strong>Author:</strong> <span id="book-author"></span></p>
+      <p><strong>Publisher:</strong> <span id="book-publisher"></span></p>
+      <p><strong>Edition:</strong> <span id="book-edition"></span></p>
+      <p><strong>Summary:</strong> <span id="book-summary"></span></p>
+      <button>Read Book </button>
+      <button>Buy Book</button>
+    </div>
+  </div>
+
+  <script>
+    const book = JSON.parse(localStorage.getItem('selectedBookFromAPI'));
+
+    if (book && book.volumeInfo) {
+      const info = book.volumeInfo;
+
+      document.getElementById('book-img').src =
+        info.imageLinks?.thumbnail || "https://via.placeholder.com/150";
+
+      document.getElementById('book-title').textContent = info.title || "Title not available";
+      document.getElementById('book-author').textContent = info.authors?.join(", ") || "Author not available";
+      document.getElementById('book-publisher').textContent = info.publisher || "Publisher not available";
+      document.getElementById('book-edition').textContent = info.publishedDate || "Edition not available";
+      document.getElementById('book-summary').textContent = info.description || "No summary available.";
+    } else {
+      // Optional: fallback for static books or OpenLibrary format (if needed)
+      document.getElementById('book-title').textContent = "No book data found.";
+    }
+
+  </script>
+</body>
+
+</html>

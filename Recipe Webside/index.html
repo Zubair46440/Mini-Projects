@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodieland</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Foodieland<span>.</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="sr-generater.html">Recipes Generater</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contect.html">Contect</a></li>
+      </ul>
+    </nav>
+    <div class="log">
+      <button>Sign in</button>
+      <button>Sign up</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-carousel">
+      <div class="carousel-container">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+          <div class="hero-text">
+            <h1>Spicy Delicious<br>Chicken Wings.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum hic enim recusandae.</p>
+            <div class="tags">
+              <span>⏱️ 30 Minutes</span>
+              <span>🍗 Chicken</span>
+            </div>
+            <div class="author">
+              <img src="https://i.pravatar.cc/40" alt="Author">
+              <div>
+                <strong>John Smith</strong><br>
+                <small>15 March 2022</small>
+              </div>
+            </div>
+            <button class="view-recipes">View Recipes ➤</button>
+          </div>
+          <div class="hero-image">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.QlOlOem175R5oiZG_HYLXwHaE8&pid=Api&P=0&h=180"
+              alt="Chicken Wings">
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <div class="hero-text">
+            <h1>Paneer Tikka<br>With Mint Chutney</h1>
+            <p>Smoky marinated paneer grilled to perfection, served with a cool green dip!</p>
+            <div class="tags">
+              <span>⏱️ 25 Minutes</span>
+              <span>🥦 Vegetarian</span>
+            </div>
+            <div class="author">
+              <img src="https://i.pravatar.cc/41" alt="Author">
+              <div>
+                <strong>Kriti Verma</strong><br>
+                <small>10 May 2024</small>
+              </div>
+            </div>
+            <button class="view-recipes">View Recipes ➤</button>
+          </div>
+          <div class="hero-image">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.uuaB5C8ZhJR02CXloMpvPwHaE8&pid=Api&P=0&h=180"
+              alt="Paneer Tikka">
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <div class="hero-text">
+            <h1>Veg Biryani<br>With Raita</h1>
+            <p>Aromatic rice, colorful veggies & flavorful spices make this dish irresistible!</p>
+            <div class="tags">
+              <span>⏱️ 40 Minutes</span>
+              <span>🥦 Vegetarian</span>
+            </div>
+            <div class="author">
+              <img src="https://i.pravatar.cc/42" alt="Author">
+              <div>
+                <strong>Neeraj Shah</strong><br>
+                <small>08 May 2024</small>
+              </div>
+            </div>
+            <button class="view-recipes">View Recipes ➤</button>
+          </div>
+          <div class="hero-image">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.09w0S6udb6sRvC1qeh3gdQHaE0&pid=Api&P=0&h=180"
+              alt="Veg Biryani">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="categories">
+    <div class="categories-header">
+      <h2>Categories</h2>
+      <button>View All Categories</button>
+    </div>
+    <div class="category-cards">
+      <div class="category">🍙<p>Breakfast</p>
+      </div>
+      <div class="category">🥬<p>Vegan</p>
+      </div>
+      <div class="category">🥩<p>Meat</p>
+      </div>
+      <div class="category">🍰<p>Dessert</p>
+      </div>
+      <div class="category">🥪<p>Lunch</p>
+      </div>
+      <div class="category">🍫<p>Chocolate</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+  
+    let currentIndex = 0;
+  
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+  
+    // Auto-rotate (optional)
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 4000);
+  </script>
+
+</body>
+
+</html>

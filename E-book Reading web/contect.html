@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Free eBook Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .navbar {
+            background-color: #4a90e2;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        .search-auth {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .search-auth input {
+            padding: 0.4rem 0.7rem;
+            border: none;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #4a90e2;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4b0082;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .contact-form-container {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: #4b0082;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #360063;
+        }
+
+        footer {
+            background-color: #4b0082;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">📚 EduBooks</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contect.html">Contact</a></li>
+        </ul>
+
+        <div class="search-auth">
+            <button class="btn"><a href="signin.html">Sign In</a></button>
+            <button class="btn btn-outline"><a href="signup.html">Sign Up</a></button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <section class="contact-form-container">
+        <form class="contact-form">
+            <h2>Get in Touch</h2>
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Wait until the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactForm = document.querySelector(".contact-form");
+
+            contactForm.addEventListener("submit", (event) => {
+                event.preventDefault(); // Prevent actual form submission
+
+                // Get form values
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+
+                // Basic validation
+                if (!name || !email || !message) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                // Email format check (very simple)
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                // Simulate form submission (success message)
+                alert("Thank you! Your message has been sent successfully.");
+
+                // Optionally clear the form
+                contactForm.reset();
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

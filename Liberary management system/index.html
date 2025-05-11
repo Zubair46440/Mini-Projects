@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>📚 Library Management</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html">Book</a>
+      <a href="incharge.html">Issue/Collect</a>
+
+    </nav>
+
+    <div class="search-auth">
+      <button class="btn"><a href="signin.html">Sign In</a></button>
+      <button class="btn btn-outline"><a href="signup.html">Sign Up</a></button>
+    </div>
+  </header>
+
+  <section id="home" class="section">
+    <h2>Welcome to Our Digital Library</h2>
+    <p>Explore a universe of knowledge with a simple search.</p>
+  </section>
+
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel-slide active">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5d45d3f588c7ec0001b485f0/1615596244552-RHQ2XRXTCKAOULNKNASE/1+-+New+Book+-+FB.jpg"
+          alt="Library Slide 1">
+        <p>“A room without books is like a body without a soul.”</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://luxurylondon.co.uk/wp-content/uploads/2023/06/BOOK-COLLAGE-06-02-2023-1920x1280-1.jpg"
+          alt="Library Slide 2">
+        <p>Explore, Borrow, and Grow with our Smart Library System.</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.OipRX48ZcNKkKmemnVcaIAHaFj&pid=Api&P=0&h=180"
+          alt="Library Slide 3">
+        <p>Track books effortlessly with digital power.</p>
+      </div>
+
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </section>
+
+
+  <script src="scripts.js"></script>
+  <script>
+    // Carousel 
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Auto slide every 5 seconds
+    setInterval(nextSlide, 3000);
+
+    // Show initial slide
+    showSlide(currentSlide);
+
+  </script>
+
+</body>
+
+</html>

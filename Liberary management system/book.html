@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>📚 Library Management</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html">Book</a>
+      <a href="incharge.html">Issue/Collect</a>
+
+    </nav>
+    
+    <div class="search-auth">
+      <button class="btn"><a href="signin.html">Sign In</a></button>
+      <button class="btn btn-outline"><a href="signup.html">Sign Up</a></button>
+    </div>
+  </header>
+
+  <section id="home" class="section">
+    <h2>Welcome to Our Digital Library</h2>
+    <p>Explore a universe of knowledge with a simple search.</p>
+  </section>
+
+  <section id="books" class="section">
+    <h2>Search & Discover Books</h2>
+    <div class="search-bar">
+      <input type="text" id="searchQuery" placeholder="Enter a topic or book name..." />
+      <button onclick="fetchBooks()">🔍</button>
+    </div>
+
+    <div id="loading" class="spinner" style="display:none;"></div>
+    <div id="bookList" class="book-list"></div>
+    <div class="pagination">
+      <button id="prevPage" onclick="changePage(-1)" disabled>⏪ Prev</button>
+      <button id="nextPage" onclick="changePage(1)" disabled>Next ⏩</button>
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
+
+</body>
+
+</html>

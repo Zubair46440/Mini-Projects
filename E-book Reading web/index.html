@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduBooks - Free Student Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #4a90e2;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .search-auth {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .search-auth input {
+      padding: 0.4rem 0.7rem;
+      border: none;
+      border-radius: 4px;
+      width: 200px;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      background-color: white;
+      color: #4a90e2;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+
+    .book-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .book-section h2 {
+      margin-bottom: 1.5rem;
+      color: #2e2e2e;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .book-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .book-card:hover {
+      transform: scale(1.02);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .book-card h4 {
+      margin: 0.8rem 0 0.4rem;
+    }
+
+    .book-card p {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌐 Navbar -->
+  <nav class="navbar">
+    <div class="logo">📚 EduBooks</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contect.html">Contact</a></li>
+    </ul>
+
+    <div class="search-auth">
+      <input type="text" placeholder="Search books..." id="searchInput" />
+      <button class="btn"><a href="signin.html">Sign In</a></button>
+      <button class="btn btn-outline"><a href="signup.html">Sign Up</a></button>
+    </div>
+  </nav>
+
+  <!-- 📖 Main Section with Books -->
+  <section class="book-section">
+    <h2>📘 Reference Books</h2>
+    <div class="book-grid" id="bookList">
+      <!-- Sample Books -->
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10523562-L.jpg" alt="Book Cover" />
+        <h4>NCERT Chemistry - Class 12</h4>
+        <p>Subject: Chemistry</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10909262-L.jpg" alt="Book Cover" />
+        <h4>RD Sharma Mathematics - Class 10</h4>
+        <p>Subject: Math</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/11106340-L.jpg" alt="Book Cover" />
+        <h4>Modern ABC Physics</h4>
+        <p>Subject: Physics</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10714825-L.jpg" alt="Book Cover" />
+        <h4>HC Verma - Concepts of Physics Vol 1</h4>
+        <p>Subject: Physics</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10523565-L.jpg" alt="Book Cover" />
+        <h4>NCERT History - Class 9</h4>
+        <p>Subject: History</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10741704-L.jpg" alt="Book Cover" />
+        <h4>NCERT Geography - Class 10</h4>
+        <p>Subject: Geography</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10734745-L.jpg" alt="Book Cover" />
+        <h4>NCERT English - Flamingo</h4>
+        <p>Subject: English</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10925631-L.jpg" alt="Book Cover" />
+        <h4>NCERT Political Science - Class 12</h4>
+        <p>Subject: Political Science</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10647857-L.jpg" alt="Book Cover" />
+        <h4>Intro to Computer Science</h4>
+        <p>Subject: Computer</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10659153-L.jpg" alt="Book Cover" />
+        <h4>C Programming by Dennis Ritchie</h4>
+        <p>Subject: Programming</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10555818-L.jpg" alt="Book Cover" />
+        <h4>Introduction to Algorithms</h4>
+        <p>Subject: Computer Science</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10927723-L.jpg" alt="Book Cover" />
+        <h4>Class 11 Economics - NCERT</h4>
+        <p>Subject: Economics</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10695074-L.jpg" alt="Book Cover" />
+        <h4>Python Programming for Beginners</h4>
+        <p>Subject: Programming</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10777838-L.jpg" alt="Book Cover" />
+        <h4>Understanding Business Studies</h4>
+        <p>Subject: Business Studies</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10958907-L.jpg" alt="Book Cover" />
+        <h4>NCERT Sociology - Class 12</h4>
+        <p>Subject: Sociology</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10562563-L.jpg" alt="Book Cover" />
+        <h4>Science - Class 8</h4>
+        <p>Subject: General Science</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10764354-L.jpg" alt="Book Cover" />
+        <h4>Classical Mechanics</h4>
+        <p>Subject: Physics</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10948900-L.jpg" alt="Book Cover" />
+        <h4>Environmental Studies</h4>
+        <p>Subject: EVS</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10788459-L.jpg" alt="Book Cover" />
+        <h4>Basic Electrical Engineering</h4>
+        <p>Subject: Electrical</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10604858-L.jpg" alt="Book Cover" />
+        <h4>Introduction to Psychology</h4>
+        <p>Subject: Psychology</p>
+        <button class="btn">Read Now</button>
+      </div>
+
+    </div>
+  </section>
+  <script>
+    // Wait for the DOM to load
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("searchInput");
+      const bookList = document.getElementById("bookList"); // ✅ You missed this earlier
+
+      // 🔍 Local Book Search Functionality (for static reference books)
+      searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const bookCards = document.querySelectorAll(".book-card"); // must be inside this block
+
+        bookCards.forEach(card => {
+          const title = card.querySelector("h4").innerText.toLowerCase();
+          const subject = card.querySelector("p").innerText.toLowerCase();
+          if (title.includes(searchTerm) || subject.includes(searchTerm)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+
+      // 🧪 Google Books API Search Integration
+      searchInput.addEventListener("input", async () => {
+        const query = searchInput.value.trim();
+        if (query.length < 3) return;
+
+        bookList.innerHTML = "Loading...";
+
+        try {
+          const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+          const data = await res.json();
+
+          bookList.innerHTML = ""; // clear existing
+
+          data.items.forEach(book => {
+            const volumeInfo = book.volumeInfo;
+            const title = volumeInfo.title;
+            const authors = volumeInfo.authors?.join(", ") || "Unknown";
+            const thumbnail = volumeInfo.imageLinks?.thumbnail || "https://via.placeholder.com/150";
+
+            const bookCard = document.createElement("div");
+            bookCard.classList.add("book-card");
+            bookCard.innerHTML = `
+          <img src="${thumbnail}" alt="Book Cover" />
+          <h4>${title}</h4>
+          <p>${authors}</p>
+          <button class="btn">Read Now</button>
+        `;
+
+            // ✅ Attach click event to each fetched book
+            bookCard.addEventListener("click", () => {
+              handleBookClick(book);
+            });
+
+            bookList.appendChild(bookCard);
+          });
+        } catch (err) {
+          console.error("Failed to fetch books:", err);
+          bookList.innerHTML = "Failed to load books.";
+        }
+      });
+
+      // ✅ Store selected book in localStorage and redirect
+      function handleBookClick(book) {
+        localStorage.setItem('selectedBookFromAPI', JSON.stringify(book));
+        window.location.href = 'book-details.html';
+      }
+    });
+  </script>
+</body>
+
+</html>

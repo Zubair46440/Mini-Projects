@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Free eBook Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #4a90e2;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        .search-auth {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .search-auth input {
+            padding: 0.4rem 0.7rem;
+            border: none;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #4a90e2;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        header {
+            background-color: #4b0082;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: #4b0082;
+        }
+
+        .about-text p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .about-image img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #4b0082;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">📚 EduBooks</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contect.html">Contact</a></li>
+        </ul>
+
+        <div class="search-auth">
+            <button class="btn"><a href="signin.html">Sign In</a></button>
+            <button class="btn btn-outline"><a href="signup.html">Sign Up</a></button>
+        </div>
+    </nav>
+
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <section class="about-container">
+        <div class="about-text">
+            <div class="about-text">
+                <h2>Our Mission</h2>
+                <p>
+                  At Free eBook Library, our mission is to make education accessible to everyone, 
+                  regardless of their financial background or geographical location. We understand the 
+                  challenges students face when trying to obtain physical textbooks or when they cannot afford the 
+                  high cost of academic materials. 
+                </p>
+                <p>
+                  With this platform, we aim to offer free access to a wide range of educational books, 
+                  including school textbooks, reference books, and even guides for competitive exams. Our goal is 
+                  to help students continue their studies without the burden of buying expensive textbooks or carrying 
+                  a pile of books from one place to another.
+                </p>
+                <h2>What We Offer</h2>
+                <p>
+                  We provide students with the ability to explore a vast collection of digital books online — completely 
+                  free of charge. Whether you’re in school, college, or preparing for professional exams, we have books 
+                  across various subjects such as Science, Mathematics, History, Geography, and more. Our collection is 
+                  regularly updated to ensure students have access to the latest resources.
+                </p>
+                <h2>Why Choose Us?</h2>
+                <ul>
+                  <li>Free and easy access to educational books.</li>
+                  <li>Read books online without downloading, saving device storage.</li>
+                  <li>Various genres and subjects for students at all academic levels.</li>
+                  <li>Save time and effort — no need to carry physical books everywhere.</li>
+                  <li>Fully responsive website for use on desktops, tablets, and smartphones.</li>
+                </ul>
+                <h2>Our Vision</h2>
+                <p>
+                  We envision a world where students, regardless of their financial background, 
+                  have equal access to quality educational materials. We believe that knowledge is a 
+                  right, not a privilege, and that learning should be an enjoyable experience, free 
+                  from the barriers that often limit it.
+                </p>
+                <p>
+                  Join us in making education accessible to all — one book at a time!
+                </p>
+              </div>
+
+        <div class="about-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" alt="Bookshelf illustration" />
+        </div>
+    </section>
+
+</body>
+
+</html>
